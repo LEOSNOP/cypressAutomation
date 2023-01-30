@@ -29,4 +29,14 @@ describe('Cadastro', ()=>{
         signup.alertExpectedMessage(texto_erro)
 
     });
+
+    it('Email incorreto', function() {
+        const texto_erro = 'Oops! Email com formato invalido.'
+
+        signup.go()
+        signup.filform(this.deliver.email_inv)
+        signup.submit()
+        signup.alertExpectedMessage(texto_erro)
+    });
+    
 });

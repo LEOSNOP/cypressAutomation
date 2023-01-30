@@ -31,6 +31,22 @@
             },
             "metodo_entrega": "Bicicleta",
             "cnh": "cnh_gratuita.jpg"
+    },
+    "email_inv":{
+        "nome": "Lucas",
+            "cpf": "12333355505",
+            "email": "lucas.com.br",
+            "whatsapp": "11984637897",
+           "endereco": {
+                "cep": "04534011",
+                "rua": "Rua Joaquim Floriano",
+                "numero": "1000",
+                "complemento": "apt 141",
+                "bairro": "Itaim Bibi",
+                "cidade_uf": "São Paulo/SP"
+            },
+            "metodo_entrega": "Bicicleta",
+            "cnh": "cnh_gratuita.jpg"
     }
 
 }
