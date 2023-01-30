@@ -43,7 +43,7 @@ describe('Cadastro', () => {
 
         deliver.email = 'user.com.br'
 
-        const texto_erro = 'Oops! Email com formato invalido.'
+        const texto_erro = 'Oops! Email com formato inválido.'
 
         signup.go()
         signup.filform(deliver)
@@ -53,24 +53,26 @@ describe('Cadastro', () => {
 
     context('Campo fazio', function () {
 
-        const mensagens = [
-            { field: 'name', output: 'É necessário informar o nome' },
-            { field: 'cpf', output: 'É necessário informar o CPF' },
-            { field: 'email', output: 'É necessário informar o email' },
-            { field: 'postalcode', output: 'É necessário informar o CEP' },
-            { field: 'number', output: 'É necessário informar o numero do endereço' },
-            { field: 'delivery_method', output: 'Selecione o método de entrega' },
-            { field: 'cnh', output: 'Adicione uma foto da sua CNH' }
-        ]
-
-        before(function(){
-            signupPage.go()
-            signupPage.submit()
+        beforeEach(function () {
+            signup.go()
+            signup.submit()
         })
 
-        messages.forEach(function(msg){
-            it('${msg.field} is required', function(){
-                signupPage.alertExpectedMessage(msg.output)
+        const mensagens = [
+            { campo: 'name', output: 'É necessário informar o nome' },
+            { campo: 'cpf', output: 'É necessário informar o CPF' },
+            { campo: 'email', output: 'É necessário informar o email' },
+            { campo: 'postalcode', output: 'É necessário informar o CEP' },
+            { campo: 'number', output: 'É necessário informar o número do endereço' },
+            { campo: 'delivery_method', output: 'Selecione o método de entrega' },
+            { campo: 'cnh', output: 'Adicione uma foto da sua CNH' }
+        ]
+
+
+
+        mensagens.forEach(function (msg) {
+            it(`${msg.campo} is required`, function () {
+                signup.alertExpectedMessage(msg.output)
             })
         })
 

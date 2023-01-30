@@ -1,15 +1,16 @@
-var faker = require ('faker')
-var cpf = require('gerador-validador-cpf')
+import { faker } from '@faker-js/faker';
+import { generate } from 'gerador-validador-cpf'
+
  export default {
 
     deliver: function() {
         
-        var firstName = faker.nome.firstName()
-        var lastName = faker.nome.lastName()
+        var firstName = faker.name.firstName()
+        var lastName = faker.name.lastName()
 
         var data = {
-            nome: '${firstName} ${lastName}',
-                cpf: cpf.generate(),
+            nome: firstName+" "+lastName,
+                cpf: generate(),
                 email: faker.internet.email(firstName),
                 whatsapp: '11984637897',
                 endereco: {
@@ -20,7 +21,7 @@ var cpf = require('gerador-validador-cpf')
                     bairro: 'Itaim Bibi',
                     cidade_uf: 'São Paulo/SP'
                 },
-                metodo_entrega: 'Bicicleta',
+                metodo_entrega: 'Bike Elétrica',
                 cnh: 'cnh_gratuita.jpg'
         }
 
