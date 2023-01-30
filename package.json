@@ -1,0 +1,15 @@
+{
+  "name": "burger-eats",
+  "version": "1.0.0",
+  "description": "testes de aceitação do app bugereats",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Leo",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.3.0",
+    "cypress-file-upload": "^5.0.8"
+  }
+}
