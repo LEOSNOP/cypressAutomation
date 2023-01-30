@@ -17,7 +17,7 @@
                     bairro: 'Itaim Bibi',
                     cidade_uf: 'São Paulo/SP'
                 },
-                metodo_entrega: 'Bicicleta',
+                metodo_entrega: 'Bike Elétrica',
                 cnh: 'cnh_gratuita.jpg'
         }
 
