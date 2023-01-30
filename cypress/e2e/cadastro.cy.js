@@ -1,7 +1,7 @@
 import signup from "../pages/SignupPage"
 import signupFactory from "../factories/SignupFactory"
 
-describe('Cadastro', ()=>{
+describe('Cadastro', () => {
 
     /*beforeEach(function() {
         cy.fixture('deliver').then((d)=>{
@@ -9,8 +9,8 @@ describe('Cadastro', ()=>{
         })
     });*/
 
-    it('Usuario deve se tornar um entregador', function() {
-        
+    it('Usuario deve se tornar um entregador', function () {
+
         var deliver = signupFactory.deliver()
 
         const expectedMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.'
@@ -22,8 +22,8 @@ describe('Cadastro', ()=>{
 
     });
 
-    it('Cpf incorreto', function() {
-        
+    it('Cpf incorreto', function () {
+
         var deliver = signupFactory.deliver()
 
         deliver.cpf = '00000141aa'
@@ -37,12 +37,12 @@ describe('Cadastro', ()=>{
 
     });
 
-    it('Email incorreto', function() {
-        
+    it('Email incorreto', function () {
+
         var deliver = signupFactory.deliver()
 
         deliver.email = 'user.com.br'
-        
+
         const texto_erro = 'Oops! Email com formato invalido.'
 
         signup.go()
@@ -50,5 +50,31 @@ describe('Cadastro', ()=>{
         signup.submit()
         signup.alertExpectedMessage(texto_erro)
     });
-    
+
+    context('Campo fazio', function () {
+
+        const mensagens = [
+            { field: 'name', output: 'É necessário informar o nome' },
+            { field: 'cpf', output: 'É necessário informar o CPF' },
+            { field: 'email', output: 'É necessário informar o email' },
+            { field: 'postalcode', output: 'É necessário informar o CEP' },
+            { field: 'number', output: 'É necessário informar o numero do endereço' },
+            { field: 'delivery_method', output: 'Selecione o método de entrega' },
+            { field: 'cnh', output: 'Adicione uma foto da sua CNH' }
+        ]
+
+        before(function(){
+            signupPage.go()
+            signupPage.submit()
+        })
+
+        messages.forEach(function(msg){
+            it('${msg.field} is required', function(){
+                signupPage.alertExpectedMessage(msg.output)
+            })
+        })
+
+    })
+
+
 });
