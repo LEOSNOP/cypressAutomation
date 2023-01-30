@@ -31,7 +31,7 @@ describe('Cadastro', ()=>{
     });
 
     it('Email incorreto', function() {
-        const texto_erro = 'Oops! Email com formato invalido.'
+        const texto_erro = 'Oops! Email com formato inválido.'
 
         signup.go()
         signup.filform(this.deliver.email_inv)
