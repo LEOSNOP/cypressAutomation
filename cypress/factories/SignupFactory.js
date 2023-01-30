@@ -1,5 +1,5 @@
 var faker = require ('faker')
-
+var cpf = require('gerador-validador-cpf')
  export default {
 
     deliver: function() {
@@ -9,7 +9,7 @@ var faker = require ('faker')
 
         var data = {
             nome: '${firstName} ${lastName}',
-                cpf: '12333355505',
+                cpf: cpf.generate(),
                 email: faker.internet.email(firstName),
                 whatsapp: '11984637897',
                 endereco: {
