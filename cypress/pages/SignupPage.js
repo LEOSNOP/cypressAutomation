@@ -12,7 +12,7 @@ class SignupPage {
     }
 
     filform(deliver){
-        cy.get('input[name="fullName"]').type(deliver.nome)
+        cy.get('input[name="fullName"]').type(deliver.nome,{parseSpecialCharSequences: false})
         cy.get('input[name="cpf"]').type(deliver.cpf)
         cy.get('input[name="email"]').type(deliver.email)
         cy.get('input[name="whatsapp"]').type(deliver.whatsapp)

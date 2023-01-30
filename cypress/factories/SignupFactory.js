@@ -1,14 +1,14 @@
-var faker = require ('@faker-js/faker')
+import { faker } from '@faker-js/faker';
 
  export default {
 
     deliver: function() {
         
-        var firstName = faker.nome.firstName()
-        var lastName = faker.nome.lastName()
+        var firstName = faker.name.firstName()
+        var lastName = faker.name.lastName()
 
         var data = {
-            nome: '${firstName} ${lastName}',
+            nome: firstName + lastName,
                 cpf: '12333355505',
                 email: faker.internet.email(firstName),
                 whatsapp: '11984637897',
@@ -20,7 +20,7 @@ var faker = require ('@faker-js/faker')
                     bairro: 'Itaim Bibi',
                     cidade_uf: 'São Paulo/SP'
                 },
-                metodo_entrega: 'Bicicleta',
+                metodo_entrega: 'Bike Elétrica',
                 cnh: 'cnh_gratuita.jpg'
         }
 

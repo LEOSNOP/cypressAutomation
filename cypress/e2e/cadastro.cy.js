@@ -43,7 +43,7 @@ describe('Cadastro', ()=>{
 
         deliver.email = 'user.com.br'
         
-        const texto_erro = 'Oops! Email com formato invalido.'
+        const texto_erro = 'Oops! Email com formato inválido.'
 
         signup.go()
         signup.filform(deliver)
