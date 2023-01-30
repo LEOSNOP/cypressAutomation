@@ -41,7 +41,7 @@ describe('Cadastro', ()=>{
         
         var deliver = signupFactory.deliver()
 
-        deliver.email = 'lucas.com.br'
+        deliver.email = 'user.com.br'
         
         const texto_erro = 'Oops! Email com formato invalido.'
 

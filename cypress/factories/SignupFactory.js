@@ -1,13 +1,16 @@
-
+var faker = require ('faker')
 
  export default {
 
     deliver: function() {
         
+        var firstName = faker.nome.firstName()
+        var lastName = faker.nome.lastName()
+
         var data = {
-            nome: 'Leon',
+            nome: '${firstName} ${lastName}',
                 cpf: '12333355505',
-                email: 'leon.sora@gmail.com',
+                email: faker.internet.email(firstName),
                 whatsapp: '11984637897',
                 endereco: {
                     cep: '04534011',
