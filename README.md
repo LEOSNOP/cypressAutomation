@@ -3,8 +3,9 @@
  Projeto feito com os seguintes componentes:
 
  -Cypress
- -NodeJs 
- -Json 
+ 
+ -NodeJs
+ 
  -VsCode
 
 
