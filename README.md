@@ -16,11 +16,14 @@ tem o arquivo home.cy.js que foi criado para testar os comandos basicos do cypre
 
 no arquivo cadastro.cy.js esta os casos de teste reais do site do curso.
 
-- Cenarios -
+- Cenarios 
 
 1-Usuario deve se tornar um entregador
-2-Cpf incorreto 
+
+2-Cpf incorreto
+
 3-Email incorreto
+
 4-Campo fazio
 
 #PageObect
